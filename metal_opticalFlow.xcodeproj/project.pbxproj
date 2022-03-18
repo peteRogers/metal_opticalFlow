@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		61C3FF8E27DF6E1F00F4BC7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3FF8D27DF6E1F00F4BC7A /* AppDelegate.swift */; };
+		61C3FF9027DF6E1F00F4BC7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3FF8F27DF6E1F00F4BC7A /* SceneDelegate.swift */; };
+		61C3FF9227DF6E1F00F4BC7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3FF9127DF6E1F00F4BC7A /* ViewController.swift */; };
+		61C3FF9527DF6E1F00F4BC7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C3FF9327DF6E1F00F4BC7A /* Main.storyboard */; };
+		61C3FF9727DF6E2100F4BC7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61C3FF9627DF6E2100F4BC7A /* Assets.xcassets */; };
+		61C3FF9A27DF6E2100F4BC7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C3FF9827DF6E2100F4BC7A /* LaunchScreen.storyboard */; };
+		61C3FFCF27E0F7E000F4BC7A /* myshader.ci.metal in Sources */ = {isa = PBXBuildFile; fileRef = 61C3FFCE27E0F7E000F4BC7A /* myshader.ci.metal */; };
+		61C3FFD127E23F5500F4BC7A /* ViewControllerAddons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3FFD027E23F5500F4BC7A /* ViewControllerAddons.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		61C3FFCA27E0E42E00F4BC7A /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.ci.metal";
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).air",
+			);
+			runOncePerArchitecture = 0;
+			script = "xcrun metal -c -fcikernel \"${INPUT_FILE_PATH}\" -o \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+		};
+		61C3FFCB27E0E47800F4BC7A /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.ci.air";
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+				"${METAL_LIBRARY_OUTPUT_DIR}/${INPUT_FILE_BASE}.metallib",
+			);
+			runOncePerArchitecture = 0;
+			script = "xcrun metallib -cikernel \"${INPUT_FILE_PATH}\" -o \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXFileReference section */
+		61C3FF8A27DF6E1F00F4BC7A /* metal_opticalFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metal_opticalFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		61C3FF8D27DF6E1F00F4BC7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		61C3FF8F27DF6E1F00F4BC7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		61C3FF9127DF6E1F00F4BC7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		61C3FF9427DF6E1F00F4BC7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		61C3FF9627DF6E2100F4BC7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		61C3FF9927DF6E2100F4BC7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		61C3FF9B27DF6E2100F4BC7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61C3FFA127DF715D00F4BC7A /* metal_opticalFlow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = metal_opticalFlow.entitlements; sourceTree = "<group>"; };
+		61C3FFCE27E0F7E000F4BC7A /* myshader.ci.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = myshader.ci.metal; sourceTree = "<group>"; };
+		61C3FFD027E23F5500F4BC7A /* ViewControllerAddons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAddons.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		61C3FF8727DF6E1F00F4BC7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		61C3FF8127DF6E1F00F4BC7A = {
+			isa = PBXGroup;
+			children = (
+				61C3FF8C27DF6E1F00F4BC7A /* metal_opticalFlow */,
+				61C3FF8B27DF6E1F00F4BC7A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		61C3FF8B27DF6E1F00F4BC7A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				61C3FF8A27DF6E1F00F4BC7A /* metal_opticalFlow.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		61C3FF8C27DF6E1F00F4BC7A /* metal_opticalFlow */ = {
+			isa = PBXGroup;
+			children = (
+				61C3FFA127DF715D00F4BC7A /* metal_opticalFlow.entitlements */,
+				61C3FF8D27DF6E1F00F4BC7A /* AppDelegate.swift */,
+				61C3FF8F27DF6E1F00F4BC7A /* SceneDelegate.swift */,
+				61C3FF9127DF6E1F00F4BC7A /* ViewController.swift */,
+				61C3FFD027E23F5500F4BC7A /* ViewControllerAddons.swift */,
+				61C3FFCE27E0F7E000F4BC7A /* myshader.ci.metal */,
+				61C3FF9327DF6E1F00F4BC7A /* Main.storyboard */,
+				61C3FF9627DF6E2100F4BC7A /* Assets.xcassets */,
+				61C3FF9827DF6E2100F4BC7A /* LaunchScreen.storyboard */,
+				61C3FF9B27DF6E2100F4BC7A /* Info.plist */,
+			);
+			path = metal_opticalFlow;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		61C3FF8927DF6E1F00F4BC7A /* metal_opticalFlow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61C3FF9E27DF6E2100F4BC7A /* Build configuration list for PBXNativeTarget "metal_opticalFlow" */;
+			buildPhases = (
+				61C3FF8627DF6E1F00F4BC7A /* Sources */,
+				61C3FF8727DF6E1F00F4BC7A /* Frameworks */,
+				61C3FF8827DF6E1F00F4BC7A /* Resources */,
+			);
+			buildRules = (
+				61C3FFCB27E0E47800F4BC7A /* PBXBuildRule */,
+				61C3FFCA27E0E42E00F4BC7A /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = metal_opticalFlow;
+			productName = metalVideoFilter;
+			productReference = 61C3FF8A27DF6E1F00F4BC7A /* metal_opticalFlow.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		61C3FF8227DF6E1F00F4BC7A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					61C3FF8927DF6E1F00F4BC7A = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 61C3FF8527DF6E1F00F4BC7A /* Build configuration list for PBXProject "metal_opticalFlow" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 61C3FF8127DF6E1F00F4BC7A;
+			productRefGroup = 61C3FF8B27DF6E1F00F4BC7A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				61C3FF8927DF6E1F00F4BC7A /* metal_opticalFlow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		61C3FF8827DF6E1F00F4BC7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61C3FF9A27DF6E2100F4BC7A /* LaunchScreen.storyboard in Resources */,
+				61C3FF9727DF6E2100F4BC7A /* Assets.xcassets in Resources */,
+				61C3FF9527DF6E1F00F4BC7A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		61C3FF8627DF6E1F00F4BC7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61C3FF9227DF6E1F00F4BC7A /* ViewController.swift in Sources */,
+				61C3FFCF27E0F7E000F4BC7A /* myshader.ci.metal in Sources */,
+				61C3FF8E27DF6E1F00F4BC7A /* AppDelegate.swift in Sources */,
+				61C3FF9027DF6E1F00F4BC7A /* SceneDelegate.swift in Sources */,
+				61C3FFD127E23F5500F4BC7A /* ViewControllerAddons.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		61C3FF9327DF6E1F00F4BC7A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				61C3FF9427DF6E1F00F4BC7A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		61C3FF9827DF6E2100F4BC7A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				61C3FF9927DF6E2100F4BC7A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		61C3FF9C27DF6E2100F4BC7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		61C3FF9D27DF6E2100F4BC7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		61C3FF9F27DF6E2100F4BC7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = metal_opticalFlow/metal_opticalFlow.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4NY9EY68HK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = metal_opticalFlow/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "pls use camera";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_COMPILER_FLAGS = "-fcikernel";
+				PRODUCT_BUNDLE_IDENTIFIER = dontworry.metalOpticalFlow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		61C3FFA027DF6E2100F4BC7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = metal_opticalFlow/metal_opticalFlow.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4NY9EY68HK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = metal_opticalFlow/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "pls use camera";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_COMPILER_FLAGS = "-fcikernel";
+				PRODUCT_BUNDLE_IDENTIFIER = dontworry.metalOpticalFlow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		61C3FF8527DF6E1F00F4BC7A /* Build configuration list for PBXProject "metal_opticalFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61C3FF9C27DF6E2100F4BC7A /* Debug */,
+				61C3FF9D27DF6E2100F4BC7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61C3FF9E27DF6E2100F4BC7A /* Build configuration list for PBXNativeTarget "metal_opticalFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61C3FF9F27DF6E2100F4BC7A /* Debug */,
+				61C3FFA027DF6E2100F4BC7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 61C3FF8227DF6E1F00F4BC7A /* Project object */;
+}
