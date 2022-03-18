@@ -53,7 +53,9 @@ class ViewController: UIViewController, MTKViewDelegate{
         let ciFilter = OpticalFlowVisualizerFilter()
         ciFilter.inputImage = sample
         let fil = CIFilter(name: "CIGaussianBlur", parameters: [kCIInputImageKey:ciFilter.outputImage!, kCIInputRadiusKey: 15])
-        currentCIImage = fil?.outputImage?.cropped(to: sample.extent)
+        //currentCIImage = fil?.outputImage?.cropped(to: sample.extent)
+        let filter = SunVisualizerFilter()
+        currentCIImage = filter.outputImage
     }
 }
 

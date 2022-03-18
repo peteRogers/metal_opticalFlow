@@ -145,7 +145,43 @@ class OpticalFlowVisualizerFilter: CIFilter {
             return OpticalFlowVisualizerFilter.kernel.apply(extent: input.extent, arguments: [input])
         }
     }
+}
     
-   
+    class SunVisualizerFilter: CIFilter {
+        var inputImage: CIImage?
+        
+        var inputSunDiameter: CGFloat = 0.01
+        var inputAlbedo: CGFloat = 0.2
+        var inputSunAzimuth: CGFloat = 0.0
+        var inputSunAlitude: CGFloat = 1.0
+        var inputSkyDarkness: CGFloat = 1.25
+        var inputScattering: CGFloat = 10.0
+        var inputWidth: CGFloat = 640
+        var inputHeight: CGFloat = 640
+        
+       
+        
+        static var kernel: CIColorKernel = { () -> CIColorKernel in
+            let url = Bundle.main.url(forResource: "skyShader",
+                                      withExtension: "ci.metallib")!
+            let data = try! Data(contentsOf: url)
+            
+            return try! CIColorKernel(functionName: "skyShader",
+                                      fromMetalLibraryData: data)
+        }()
+
+        override var outputImage : CIImage? {
+            get {
+                let extent = CGRect(x: 0, y: 0, width: inputWidth, height: inputHeight)
+                
+                let arguments = [inputWidth, inputHeight, inputSunDiameter, inputAlbedo, inputSunAzimuth, inputSunAlitude, inputSkyDarkness, inputScattering]
+                
+                let final = SunVisualizerFilter.kernel.apply(extent: extent, arguments: arguments)?.cropped(to: extent)
+                
+                return final
+            }
+        }
+        
+    
     
 }
