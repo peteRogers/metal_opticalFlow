@@ -25,13 +25,13 @@ extern "C" {
         {
             
             
-            width = 600;
-            height = 600;
-            sunDiameter = 0.1;
-            albedo = 0.5;
-            skyDarkness = 0.5;
-            //sunAzimuth = 0.5;
-            sunAlitude = 8;
+//            width = 600;
+//            height = 600;
+//            sunDiameter = 0.1;
+//            albedo = 0.5;
+//            skyDarkness = 0.5;
+//            //sunAzimuth = 0.5;
+//            sunAlitude = 8;
             float x = (dest.coord().x / width) - 0.5;
             float y = (dest.coord().y / height) - 0.5;
 

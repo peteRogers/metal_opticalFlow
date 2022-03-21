@@ -150,14 +150,14 @@ class OpticalFlowVisualizerFilter: CIFilter {
     class SunVisualizerFilter: CIFilter {
         var inputImage: CIImage?
         
-        var inputSunDiameter: CGFloat = 0.01
-        var inputAlbedo: CGFloat = 0.2
-        var inputSunAzimuth: CGFloat = 0.0
-        var inputSunAlitude: CGFloat = 1.0
-        var inputSkyDarkness: CGFloat = 1.25
-        var inputScattering: CGFloat = 10.0
+        var inputSunDiameter: CGFloat = 0.1
+        var inputAlbedo: CGFloat = 0.5
+        var inputSunAzimuth: CGFloat = 0
+        var inputSunAlitude: CGFloat = 7
+        var inputSkyDarkness: CGFloat = 1.2
+        var inputScattering: CGFloat = 2.5
         var inputWidth: CGFloat = 640
-        var inputHeight: CGFloat = 640
+        var inputHeight: CGFloat = 480
         
        
         
@@ -176,7 +176,7 @@ class OpticalFlowVisualizerFilter: CIFilter {
                 
                 let arguments = [inputWidth, inputHeight, inputSunDiameter, inputAlbedo, inputSunAzimuth, inputSunAlitude, inputSkyDarkness, inputScattering]
                 
-                let final = SunVisualizerFilter.kernel.apply(extent: extent, arguments: arguments)?.cropped(to: extent)
+                let final = SunVisualizerFilter.kernel.apply(extent: extent, arguments: arguments)
                 
                 return final
             }
