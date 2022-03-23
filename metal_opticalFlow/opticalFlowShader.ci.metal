@@ -4,7 +4,7 @@ using namespace metal;
 
 extern "C" {
     namespace coreimage {
-        float4 HDRZebra (sampler image, float minLen, float maxLen, float size, float tipAngle){
+        float4 FlowShader (sampler image, float minLen, float maxLen, float size, float tipAngle){
        // float4 HDRZebra (sampler image){
             //return s.sample(s.coord());
             float4 s = image.sample(image.coord());
