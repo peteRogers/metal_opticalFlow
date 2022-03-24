@@ -15,7 +15,6 @@
 		61C3FF9A27DF6E2100F4BC7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C3FF9827DF6E2100F4BC7A /* LaunchScreen.storyboard */; };
 		61C3FFCF27E0F7E000F4BC7A /* opticalFlowShader.ci.metal in Sources */ = {isa = PBXBuildFile; fileRef = 61C3FFCE27E0F7E000F4BC7A /* opticalFlowShader.ci.metal */; };
 		61C3FFD127E23F5500F4BC7A /* ViewControllerAddons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3FFD027E23F5500F4BC7A /* ViewControllerAddons.swift */; };
-		61EFDDC127E4D3160094E2DC /* skyShader.ci.metal in Sources */ = {isa = PBXBuildFile; fileRef = 61EFDDC027E4D3160094E2DC /* skyShader.ci.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -61,7 +60,6 @@
 		61C3FFA127DF715D00F4BC7A /* metal_opticalFlow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = metal_opticalFlow.entitlements; sourceTree = "<group>"; };
 		61C3FFCE27E0F7E000F4BC7A /* opticalFlowShader.ci.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = opticalFlowShader.ci.metal; sourceTree = "<group>"; };
 		61C3FFD027E23F5500F4BC7A /* ViewControllerAddons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAddons.swift; sourceTree = "<group>"; };
-		61EFDDC027E4D3160094E2DC /* skyShader.ci.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = skyShader.ci.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +97,6 @@
 				61C3FF8F27DF6E1F00F4BC7A /* SceneDelegate.swift */,
 				61C3FF9127DF6E1F00F4BC7A /* ViewController.swift */,
 				61C3FFD027E23F5500F4BC7A /* ViewControllerAddons.swift */,
-				61EFDDC027E4D3160094E2DC /* skyShader.ci.metal */,
 				61C3FFCE27E0F7E000F4BC7A /* opticalFlowShader.ci.metal */,
 				61C3FF9327DF6E1F00F4BC7A /* Main.storyboard */,
 				61C3FF9627DF6E2100F4BC7A /* Assets.xcassets */,
@@ -185,7 +182,6 @@
 				61C3FF9227DF6E1F00F4BC7A /* ViewController.swift in Sources */,
 				61C3FFCF27E0F7E000F4BC7A /* opticalFlowShader.ci.metal in Sources */,
 				61C3FF8E27DF6E1F00F4BC7A /* AppDelegate.swift in Sources */,
-				61EFDDC127E4D3160094E2DC /* skyShader.ci.metal in Sources */,
 				61C3FF9027DF6E1F00F4BC7A /* SceneDelegate.swift in Sources */,
 				61C3FFD127E23F5500F4BC7A /* ViewControllerAddons.swift in Sources */,
 			);

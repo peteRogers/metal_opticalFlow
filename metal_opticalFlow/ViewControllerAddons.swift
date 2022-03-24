@@ -8,9 +8,10 @@
 import Foundation
 import MetalKit
 import AVFoundation
+import Vision
 
 
-extension ViewController{
+extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate{
 
     override var prefersHomeIndicatorAutoHidden: Bool {
         return true
@@ -118,6 +119,30 @@ extension ViewController{
             
         }
     }
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        guard let pixelBuffer = sampleBuffer.imageBuffer else { return }
+        let request = CIImage(cvPixelBuffer: pixelBuffer).oriented(.up)
+        if (self.previousImage == nil)
+        {
+            self.previousImage = request
+        }
+        let visionRequest = VNGenerateOpticalFlowRequest(targetedCIImage: request, options: [:])
+        visionRequest.computationAccuracy = .veryHigh
+        do {
+            try self.requestHandler.perform([visionRequest], on: self.previousImage!)
+            
+            if let pixelBufferObservation = visionRequest.results?.first{
+                let sample = CIImage(cvImageBuffer: pixelBufferObservation.pixelBuffer)
+                processVideoFrame(sample: sample)
+            }
+        } catch {
+            print(error)
+        }
+        // store the previous image
+        self.previousImage = request
+    }
+
+    
     
 }
 
@@ -131,7 +156,7 @@ class OpticalFlowVisualizerFilter: CIFilter {
             }
     
     static var kernel: CIColorKernel = { () -> CIColorKernel in
-        let url = Bundle.main.url(forResource: "myshader",
+        let url = Bundle.main.url(forResource: "opticalFlowShader",
                                   withExtension: "ci.metallib")!
         let data = try! Data(contentsOf: url)
         
@@ -147,41 +172,5 @@ class OpticalFlowVisualizerFilter: CIFilter {
     }
 }
     
-    class SunVisualizerFilter: CIFilter {
-        var inputImage: CIImage?
-        
-        var inputSunDiameter: CGFloat = 0.1
-        var inputAlbedo: CGFloat = 0.5
-        var inputSunAzimuth: CGFloat = 0
-        var inputSunAlitude: CGFloat = 7
-        var inputSkyDarkness: CGFloat = 1.2
-        var inputScattering: CGFloat = 2.5
-        var inputWidth: CGFloat = 640
-        var inputHeight: CGFloat = 480
-        
-       
-        
-        static var kernel: CIColorKernel = { () -> CIColorKernel in
-            let url = Bundle.main.url(forResource: "skyShader",
-                                      withExtension: "ci.metallib")!
-            let data = try! Data(contentsOf: url)
-            
-            return try! CIColorKernel(functionName: "skyShader",
-                                      fromMetalLibraryData: data)
-        }()
-
-        override var outputImage : CIImage? {
-            get {
-                let extent = CGRect(x: 0, y: 0, width: inputWidth, height: inputHeight)
-                
-                let arguments = [inputWidth, inputHeight, inputSunDiameter, inputAlbedo, inputSunAzimuth, inputSunAlitude, inputSkyDarkness, inputScattering]
-                
-                let final = SunVisualizerFilter.kernel.apply(extent: extent, arguments: arguments)
-                
-                return final
-            }
-        }
-        
     
-    
-}
+ 
