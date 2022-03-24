@@ -16,7 +16,6 @@
 		61C3FFCF27E0F7E000F4BC7A /* opticalFlowShader.ci.metal in Sources */ = {isa = PBXBuildFile; fileRef = 61C3FFCE27E0F7E000F4BC7A /* opticalFlowShader.ci.metal */; };
 		61C3FFD127E23F5500F4BC7A /* ViewControllerAddons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C3FFD027E23F5500F4BC7A /* ViewControllerAddons.swift */; };
 		61EFDDC127E4D3160094E2DC /* skyShader.ci.metal in Sources */ = {isa = PBXBuildFile; fileRef = 61EFDDC027E4D3160094E2DC /* skyShader.ci.metal */; };
-		61EFDDC327E4EDF50094E2DC /* CIKL_Sky.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EFDDC227E4EDF50094E2DC /* CIKL_Sky.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -63,7 +62,6 @@
 		61C3FFCE27E0F7E000F4BC7A /* opticalFlowShader.ci.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = opticalFlowShader.ci.metal; sourceTree = "<group>"; };
 		61C3FFD027E23F5500F4BC7A /* ViewControllerAddons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAddons.swift; sourceTree = "<group>"; };
 		61EFDDC027E4D3160094E2DC /* skyShader.ci.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = skyShader.ci.metal; sourceTree = "<group>"; };
-		61EFDDC227E4EDF50094E2DC /* CIKL_Sky.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIKL_Sky.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +98,6 @@
 				61C3FF8D27DF6E1F00F4BC7A /* AppDelegate.swift */,
 				61C3FF8F27DF6E1F00F4BC7A /* SceneDelegate.swift */,
 				61C3FF9127DF6E1F00F4BC7A /* ViewController.swift */,
-				61EFDDC227E4EDF50094E2DC /* CIKL_Sky.swift */,
 				61C3FFD027E23F5500F4BC7A /* ViewControllerAddons.swift */,
 				61EFDDC027E4D3160094E2DC /* skyShader.ci.metal */,
 				61C3FFCE27E0F7E000F4BC7A /* opticalFlowShader.ci.metal */,
@@ -190,7 +187,6 @@
 				61C3FF8E27DF6E1F00F4BC7A /* AppDelegate.swift in Sources */,
 				61EFDDC127E4D3160094E2DC /* skyShader.ci.metal in Sources */,
 				61C3FF9027DF6E1F00F4BC7A /* SceneDelegate.swift in Sources */,
-				61EFDDC327E4EDF50094E2DC /* CIKL_Sky.swift in Sources */,
 				61C3FFD127E23F5500F4BC7A /* ViewControllerAddons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
