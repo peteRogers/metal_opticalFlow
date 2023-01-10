@@ -126,14 +126,17 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate{
         {
             self.previousImage = request
         }
-        let visionRequest = VNGenerateOpticalFlowRequest(targetedCIImage: request, options: [:])
-        visionRequest.computationAccuracy = .veryHigh
+       // let visionRequest = VNGenerateOpticalFlowRequest(targetedCIImage: request, options: [:])
+        let visionRequest = VNGeneratePersonSegmentationRequest()
+        visionRequest.qualityLevel = .balanced
+        
+        //visionRequest.outputPixelFormat = kCVPixelFormatType_OneComponent8
         do {
             try self.requestHandler.perform([visionRequest], on: self.previousImage!)
             
             if let pixelBufferObservation = visionRequest.results?.first{
                 let sample = CIImage(cvImageBuffer: pixelBufferObservation.pixelBuffer)
-                processVideoFrame(sample: sample)
+                processVideoFrame(sample: sample, orig: request)
             }
         } catch {
             print(error)
